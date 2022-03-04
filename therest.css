@@ -1,0 +1,119 @@
+.container {
+  max-height: auto;
+  grid-template-columns: 0.5fr 1fr 0.5fr;
+  grid-template-rows: 0.1fr 2.9fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "Top Top Top"
+    "Main Main Main";
+}
+
+.Top {
+  grid-area: Top;
+  max-width: 100%;
+  max-height: fit-content;
+}
+
+.Main {
+  grid-area: Main;
+  padding: 10px;
+  grid-template-columns: 100px 100px 100px;
+}
+
+.column {
+  height: 25%;
+  padding: 5px;
+  gap: 10px;
+  margin: 5px;
+}
+
+.left {
+  float: left;
+  width: 33%;
+  text-align: justify;
+  padding: 10px;
+  gap: 40px;
+}
+
+.middle {
+  display: inline-block;
+  width: 25%;
+  text-align: justify;
+}
+
+.right {
+  width: 25%;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+h2 {
+  column-span: all;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  background: #ffffff;
+}
+ul li {
+  display: block;
+  position: relative;
+  float: left;
+  background: #1bc2a2;
+}
+/* This hides the dropdowns */
+li ul {
+  display: none;
+}
+ul li a {
+  display: block;
+  padding: 1em;
+  text-decoration: none;
+  white-space: nowrap;
+  color: #fff;
+}
+ul li a:hover {
+  background: #2c3e50;
+}
+/* Display the dropdown */
+li:hover > ul {
+  display: block;
+  position: absolute;
+}
+/* Remove float from dropdown lists */
+li:hover li {
+  float: none;
+}
+li:hover a {
+  background: #1bc2a2;
+}
+li:hover li a:hover {
+  background: #2c3e50;
+}
+.main-navigation li ul li {
+  border-top: 0;
+}
+/* Displays second level dropdowns to the right of the first level dropdown */
+ul ul ul {
+  left: 100%;
+  top: 0;
+}
+
+/* Simple clearfix */
+
+ul:before,
+ul:after {
+  content: " "; /* 1 */
+  display: table; /* 2 */
+}
+
+ul:after {
+  clear: both;
+}
